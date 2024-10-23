@@ -1,0 +1,19 @@
+#Slid{
+margin-top:2%;
+width: 100vw;
+height: 100vh;
+max-height: 80%;
+max-width: 100%;
+position: relative;
+}
+
+#Slid img{
+    height: 100%;
+    max-height: 80%;
+    
+}
+
+.img{
+    height: 180px;
+    }
+
