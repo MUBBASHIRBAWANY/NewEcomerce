@@ -1,0 +1,19 @@
+#ModalButon{
+    background-color: black;
+    color: white;
+}
+
+.itemModal{
+    font-weight: bold;
+    margin-bottom: 2%;
+}
+
+.ModalImg{
+    height: 45vh;
+    width: 25vw;
+}
+
+.row1{
+    display: flex;
+    flex-wrap: wrap;
+}

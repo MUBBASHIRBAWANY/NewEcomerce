@@ -2,3 +2,11 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+.CapId{
+    text-transform: capitalize;
+}
+
+.container1{
+    margin-left: 5% ;
+}

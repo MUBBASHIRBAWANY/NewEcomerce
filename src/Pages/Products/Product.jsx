@@ -1,8 +1,12 @@
-import React from 'react'
+import AllProducts from '../../Componets/Products/AllProducts'
+import Header from '../../Componets/Header/Header'
+
 
 const Product = () => {
   return (
-    <div>
+    <div className='container' >
+      <Header />
+      <AllProducts />
       
     </div>
   )

@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import './FeaturedCat.css'
 import { useDispatch } from "react-redux";
-import { productSlice } from "../../Redux/Selice/ProductSlice";
+import { produstsData } from "../../Redux/Selice/ProductSlice";
+import { Link, useNavigate } from "react-router-dom";
 
 const FeaturedCat = () => {
     const [data, setdata] = useState([])
@@ -12,17 +13,25 @@ const FeaturedCat = () => {
         let res = await axios.get('https://fakestoreapi.in/api/products')
          res = res.data.products         
          setdata(res)   
-         dispatch(productSlice(res))      
+         dispatch(produstsData(res))
     }
+
+    const catData = [...new Map(data.map(item =>
+        [item["category"], item])).values()]
 
     useEffect(()=>{
             callData()
     },[])
 
-    
+    const navigate = useNavigate()
+
+    const rediteting = (id)=>{
+        navigate(id)
+    }
+
     const settings = {
          infinite: true,
-        slidesToShow: 5,
+        slidesToShow: 4,
         slidesToScroll: 2,
         autoplay: true,
         speed: 8000,
@@ -41,19 +50,19 @@ const FeaturedCat = () => {
  
  
 
-    data.map((items,index)=>{
+ catData.map((items,index)=>{
         const {image,category} = items
 
         return(
-                 
-            <div key={index} class="w-full max-w-sm bg-white border car1 border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <a href="#">
+         
+            <div onClick={()=>rediteting(`/search/${category}`)} key={index} class="w-full max-w-sm bg-white border car1 border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            
                 <img class="p-8 rounded-t-lg" src={image} alt="product image" />
-            </a>
+            
             <div class="px-5 pb-5">
-                <a href="#">
+            
                     <h3 class="text-xl bold font-semibold tracking-tight text-gray-900 dark:text-white">{category}</h3>
-                </a>
+            
                 <div class="flex items-center mt-2.5 mb-5">
                     <div class="flex items-center space-x-1 rtl:space-x-reverse">
                         <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
@@ -76,7 +85,7 @@ const FeaturedCat = () => {
               
             </div>
         </div>
-    
+       
         )
 })
  

@@ -7,7 +7,8 @@ export default function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   return (
-    <div className="flex  border-b border-gray-400 py-8">
+    <div className="fixed1 ">
+    <div className="flex border-b border-gray-400 py-8">
       <a href="/" id="logo" >
         <img src="/assets/logo.svg" alt="logo" />
       </a>
@@ -88,6 +89,7 @@ export default function Header() {
         align-items: center;
       }
     `}</style>
+    </div>
     </div>
   );
 }
