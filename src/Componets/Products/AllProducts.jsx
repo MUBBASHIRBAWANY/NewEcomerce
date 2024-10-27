@@ -30,7 +30,7 @@ const AllProducts = () => {
     
   return (
 <>
-<div className='container' >
+<div className='' >
 
 <br /><br /><br />
     <h1 className="FeCat">Our Products</h1>

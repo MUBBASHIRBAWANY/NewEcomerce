@@ -9,11 +9,12 @@
 }
 
 .ModalImg{
-    height: 45vh;
-    width: 25vw;
+    height: auto;
+    width: 80%;
 }
 
-.row1{
-    display: flex;
-    flex-wrap: wrap;
+.close{
+    background-color: black;
+    color: black;
 }
+
